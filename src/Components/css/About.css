@@ -17,11 +17,11 @@
   padding: 80px 20px 30px 20px;
 }
 
-.profile-pic {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
+.profile-img {
+  width: 200px;        /* image size */
+  height: 200px;       /* square */
+  border-radius: 50%;  /* circular */
+  object-fit: cover;   /* keep image centered and cropped */
   border: 3px solid #00aaff;
   margin-bottom: 20px;
 }
@@ -77,10 +77,15 @@
   color: #00aaff;
 }
 
-/* Remove extra spacing for small screens */
+/* Responsive for Tablets */
 @media (max-width: 768px) {
   .profile-section {
     padding: 50px 20px 20px 20px;
+  }
+
+  .profile-img {
+    width: 160px;
+    height: 160px;
   }
 
   .profile-section h1 {
@@ -94,11 +99,21 @@
   .about-content {
     padding: 0 15px 30px 15px;
   }
+
+  .about-content p {
+    font-size: 1rem;
+  }
 }
 
+/* Responsive for Mobile */
 @media (max-width: 480px) {
   .profile-section {
     padding: 40px 10px 15px 10px;
+  }
+
+  .profile-img {
+    width: 140px;
+    height: 140px;
   }
 
   .profile-section h1 {

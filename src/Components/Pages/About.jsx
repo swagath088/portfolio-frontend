@@ -8,6 +8,7 @@ function About() {
     <div className="about-page">
       <div className="profile-section">
         <h1>Admin-Portfolio</h1>
+        <img src="/images/profile.jpg" alt="Profile" className="profile-img" />
         <p>
           Hi! I am a passionate web developer. Explore my projects and blogs. You can contact me anytime, even without logging in.
         </p>
