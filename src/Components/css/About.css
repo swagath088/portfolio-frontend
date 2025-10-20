@@ -1,0 +1,115 @@
+/* About Page Base */
+.about-page {
+  min-height: 100vh;
+  background-color: #000; /* full black background */
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+/* Profile Section */
+.profile-section {
+  text-align: center;
+  padding: 80px 20px 30px 20px;
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00aaff;
+  margin-bottom: 20px;
+}
+
+.profile-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.profile-section p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* About Content */
+.about-content {
+  padding: 0 20px 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* Footer */
+.about-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #111;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+}
+
+.about-footer span {
+  color: #fff;
+}
+
+.admin-login-link {
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.admin-login-link:hover {
+  color: #00aaff;
+}
+
+/* Remove extra spacing for small screens */
+@media (max-width: 768px) {
+  .profile-section {
+    padding: 50px 20px 20px 20px;
+  }
+
+  .profile-section h1 {
+    font-size: 2rem;
+  }
+
+  .profile-section p {
+    font-size: 1rem;
+  }
+
+  .about-content {
+    padding: 0 15px 30px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-section {
+    padding: 40px 10px 15px 10px;
+  }
+
+  .profile-section h1 {
+    font-size: 1.7rem;
+  }
+
+  .profile-section p {
+    font-size: 0.95rem;
+  }
+
+  .about-content p {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,96 @@
+.view-messages-page {
+  background-color: #0d0d0d;
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.view-messages-page h2 {
+  color: #00bfff;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* Messages list */
+.view-messages-page ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.view-messages-page li {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(32, 24, 24, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.view-messages-page li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 191, 255, 0.5);
+}
+
+/* Message content */
+.view-messages-page li p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Action buttons */
+.view-messages-page button {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.view-messages-page button:hover {
+  background-color: #e60000;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .view-messages-page {
+    padding: 30px 15px;
+  }
+  .view-messages-page h2 {
+    font-size: 1.8rem;
+  }
+  .view-messages-page li {
+    padding: 15px;
+  }
+  .view-messages-page button {
+    padding: 7px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .view-messages-page {
+    padding: 20px 10px;
+  }
+  .view-messages-page h2 {
+    font-size: 1.6rem;
+  }
+  .view-messages-page li {
+    padding: 12px;
+  }
+  .view-messages-page button {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+}

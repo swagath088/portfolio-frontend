@@ -1,0 +1,114 @@
+/* Apply box-sizing to all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contact page container */
+.contact-page {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 25px 20px;
+  background-color: #0d0d0d;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 204, 255, 0.3);
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Heading */
+.contact-page h2 {
+  color: #00ccff;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Success and error messages */
+.contact-page p {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Inputs and textarea */
+.contact-page input,
+.contact-page textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: 2px solid #00ccff;
+  border-radius: 10px;
+  background-color: #111;
+  color: #f0f0f0;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+/* Focus effect */
+.contact-page input:focus,
+.contact-page textarea:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 10px #ffcc00;
+  outline: none;
+}
+
+/* Button */
+.contact-page button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #00ccff, #1e90ff);
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Button hover */
+.contact-page button:hover {
+  background: linear-gradient(90deg, #ffcc00, #ffaa00);
+  color: #000;
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(255, 204, 0, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-page {
+    margin: 30px 15px;
+    padding: 20px 15px;
+  }
+  .contact-page h2 {
+    font-size: 1.8rem;
+  }
+  .contact-page input,
+  .contact-page textarea,
+  .contact-page button {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-page {
+    margin: 20px 10px;
+    padding: 15px 10px;
+  }
+  .contact-page h2 {
+    font-size: 1.6rem;
+  }
+  .contact-page input,
+  .contact-page textarea,
+  .contact-page button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
