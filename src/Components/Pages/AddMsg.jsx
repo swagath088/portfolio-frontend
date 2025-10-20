@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { API } from "../api";
-import "../css/AddMsg.css";
+import "../css/Addmsg.css";
 
 function AddMsg() {
   const [name, setName] = useState("");
