@@ -1,9 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
+import { API } from "../api";
 import "../css/AddMsg.css";
-
-
-const API = "http://127.0.0.1:8000/api/";
 
 function AddMsg() {
   const [name, setName] = useState("");
@@ -14,15 +11,12 @@ function AddMsg() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
-    setSuccess("");
+    setError(""); setSuccess("");
 
     try {
-      await axios.post(`${API}add-message/`, { name, email, message });
+      await API.post("add-message/", { name, email, message });
       setSuccess("Message sent successfully!");
-      setName("");
-      setEmail("");
-      setMessage("");
+      setName(""); setEmail(""); setMessage("");
     } catch (err) {
       setError("Failed to send message.");
       console.error(err);
@@ -35,26 +29,9 @@ function AddMsg() {
       {success && <p style={{ color: "green" }}>{success}</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Your Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <input
-          type="email"
-          placeholder="Your Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <textarea
-          placeholder="Your Message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          required
-        />
+        <input type="text" placeholder="Your Name" value={name} onChange={e => setName(e.target.value)} required />
+        <input type="email" placeholder="Your Email" value={email} onChange={e => setEmail(e.target.value)} required />
+        <textarea placeholder="Your Message" value={message} onChange={e => setMessage(e.target.value)} required />
         <button type="submit">Send</button>
       </form>
     </div>

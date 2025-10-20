@@ -1,10 +1,11 @@
 import React from 'react';
 import '../css/Home.css';
+
 export default function Home() {
   return (
-    <div style={{ padding:20 }}>
+    <div style={{ padding: 20 }}>
       <h1>Welcome to My Portfolio</h1>
-      <p>Use navigation above to explore projects, blogs,contact form and about me page .</p>
+      <p>Use navigation above to explore projects, blogs, contact form, and about me page.</p>
     </div>
   );
 }

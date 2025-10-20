@@ -1,22 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import '../css/About.css';
-//import profilePic from '../assets/profile.jpg'; // Uncomment and add your profile image if needed
 
 function About() {
   const navigate = useNavigate();
 
   return (
     <div className="about-page">
-      {/* Profile Section */}
       <div className="profile-section">
-        {/*<img src={profilePic} alt="Profile" className="profile-pic" />*/}
         <h1>Admin-Portfolio</h1>
         <p>
           Hi! I am a passionate web developer. Explore my projects and blogs. You can contact me anytime, even without logging in.
         </p>
       </div>
 
-      {/* About Content */}
       <div className="about-content">
         <p>
           I specialize in building modern web applications using React and Django. My focus is on clean design, responsive layouts, and smooth user experience. 
@@ -24,7 +20,6 @@ function About() {
         </p>
       </div>
 
-      {/* Footer */}
       <footer className="about-footer">
         <span>&copy; {new Date().getFullYear()} My Portfolio</span>
         <span className="admin-login-link" onClick={() => navigate("/login")} title="Admin login">

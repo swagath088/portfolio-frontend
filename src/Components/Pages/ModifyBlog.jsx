@@ -7,105 +7,49 @@ function ModifyBlog() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
-  const [blog, setBlog] = useState({
-    title: "",
-    content: "",
-    category: "",
-    image: "",
-  });
+  const [blog, setBlog] = useState({ title: "", content: "", category: "", image: "" });
   const [imageFile, setImageFile] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    API.get(`blogs/${id}/`, {
-      headers: { Authorization: `Token ${token}` },
-    })
-      .then((res) => setBlog(res.data))
-      .catch((err) => console.error(err))
+    API.get(`blogs/${id}/`, { headers: { Authorization: `Token ${token}` } })
+      .then(res => setBlog(res.data))
+      .catch(err => console.error(err))
       .finally(() => setLoading(false));
   }, [id, token]);
 
-  const handleChange = (e) => {
-    setBlog({ ...blog, [e.target.name]: e.target.value });
-  };
+  const handleChange = e => setBlog({ ...blog, [e.target.name]: e.target.value });
+  const handleImageChange = e => { if(e.target.files && e.target.files[0]) setImageFile(e.target.files[0]); };
 
-  const handleImageChange = (e) => {
-    if (e.target.files && e.target.files[0]) {
-      setImageFile(e.target.files[0]);
-    }
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
-
     const formData = new FormData();
     formData.append("title", blog.title);
     formData.append("content", blog.content);
-    if (blog.category) formData.append("category", blog.category);
-    if (imageFile) formData.append("image", imageFile);
+    if(blog.category) formData.append("category", blog.category);
+    if(imageFile) formData.append("image", imageFile);
 
     try {
-      await API.put(`blogs/${id}/`, formData, {
-        headers: {
-          Authorization: `Token ${token}`,
-          "Content-Type": "multipart/form-data",
-        },
-      });
-      alert("✅ Blog updated successfully!");
+      await API.put(`blogs/${id}/`, formData, { headers: { Authorization: `Token ${token}`, "Content-Type": "multipart/form-data" } });
+      alert("Blog updated!");
       navigate("/blogs");
-    } catch (err) {
-      console.error("Update blog failed:", err.response?.data);
-      alert("❌ Failed to update blog. Check console.");
+    } catch(err) {
+      console.error(err.response?.data);
+      alert("Failed to update blog.");
     }
   };
 
-  if (loading) return <p>Loading blog...</p>;
+  if(loading) return <p>Loading blog...</p>;
 
   return (
-    <div className="modify-blog-page">
+    <div style={{ maxWidth:"600px", margin:"auto" }}>
       <h2>Modify Blog</h2>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="title"
-          value={blog.title}
-          onChange={handleChange}
-          placeholder="Title"
-          required
-        />
-        <textarea
-          name="content"
-          value={blog.content}
-          onChange={handleChange}
-          placeholder="Content"
-          required
-        />
-        <input
-          type="text"
-          name="category"
-          value={blog.category || ""}
-          onChange={handleChange}
-          placeholder="Category"
-        />
-
-        {/* ✅ Show current image if exists */}
-        {blog.image && (
-          <div style={{ marginBottom: "10px" }}>
-            <p>Current Image:</p>
-            <img
-              src={blog.image}
-              alt="Current blog"
-              style={{ width: "150px", borderRadius: "8px" }}
-            />
-          </div>
-        )}
-
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleImageChange}
-        />
-
+        <input type="text" name="title" value={blog.title} onChange={handleChange} placeholder="Title" required />
+        <textarea name="content" value={blog.content} onChange={handleChange} placeholder="Content" required />
+        <input type="text" name="category" value={blog.category || ""} onChange={handleChange} placeholder="Category" />
+        {blog.image && <div><p>Current Image:</p><img src={blog.image} alt="Current" style={{ width:150, borderRadius:8 }}/></div>}
+        <input type="file" accept="image/*" onChange={handleImageChange} />
         <button type="submit">Update Blog</button>
       </form>
     </div>
