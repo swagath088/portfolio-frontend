@@ -1,134 +1,80 @@
-/* ===== Base Page Styling ===== */
+/* Blogs.css */
+
 .blogs-page {
+  background-color: #000; /* full black background */
+  color: #fff; /* text color white */
   min-height: 100vh;
-  background-color: #0f0f0f;
-  color: #fff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 30px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 20px;
 }
 
-/* ===== Header ===== */
 .blogs-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 1200px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .blogs-header h2 {
   font-size: 2rem;
-  margin: 0 0 10px 0;
 }
 
-.blogs-header .primary {
-  padding: 10px 20px;
-  background-color: #00aaff;
+.blogs-header button {
+  background-color: #1f1f1f;
   color: #fff;
-  border: none;
-  border-radius: 25px;
+  border: 1px solid #fff;
+  padding: 8px 16px;
   cursor: pointer;
+  border-radius: 6px;
   transition: 0.3s;
 }
 
-.blogs-header .primary:hover {
-  background-color: #0088cc;
-  transform: scale(1.05);
+.blogs-header button:hover {
+  background-color: #fff;
+  color: #000;
 }
 
-/* ===== Muted Text ===== */
-.muted {
-  text-align: center;
-  color: #aaa;
-  font-size: 1.1rem;
-  margin-top: 40px;
-}
-
-/* ===== Blogs Grid ===== */
 .blogs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  width: 100%;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-/* ===== Blog Card ===== */
 .blog-card {
-  background-color: #1b1b1b;
+  background-color: #111; /* dark card */
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s, box-shadow 0.3s;
+  justify-content: start;
+  align-items: center;
+  transition: transform 0.2s;
 }
 
 .blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+  transform: scale(1.02);
 }
 
-/* ===== Blog Media (square, centered) ===== */
-.blog-media {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  border-bottom: 1px solid #333;
+.blog-card img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover; /* maintain square shape */
+  border-radius: 12px;
+  margin-bottom: 15px;
 }
 
-.blog-media img {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.blog-media img:hover {
-  transform: scale(1.05);
-}
-
-.no-image {
-  width: 140px;
-  height: 140px;
-  background-color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #888;
-  font-size: 0.9rem;
-  border-radius: 8px;
-}
-
-/* ===== Blog Body ===== */
-.blog-body {
-  padding: 15px 20px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.blog-title {
+.blog-card h3 {
   font-size: 1.4rem;
-  margin: 0 0 10px 0;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-.blog-content {
+.blog-card p {
   font-size: 1rem;
-  margin: 0 0 10px 0;
-  flex-grow: 1;
-  color: #ccc;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-/* ===== Admin Actions ===== */
 .blog-actions {
   display: flex;
   gap: 10px;
@@ -136,61 +82,16 @@
 }
 
 .blog-actions button {
-  padding: 5px 12px;
-  border: none;
-  border-radius: 5px;
+  background-color: #1f1f1f;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 6px 12px;
   cursor: pointer;
-  transition: all 0.3s;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 
 .blog-actions button:hover {
-  opacity: 0.8;
-}
-
-.blog-actions .danger {
-  background-color: #ff4444;
-  color: #fff;
-}
-
-.blog-actions .danger:hover {
-  background-color: #cc0000;
-}
-
-.blog-actions button:not(.danger) {
-  background-color: #00aaff;
-  color: #fff;
-}
-
-/* ===== Responsive Tweaks ===== */
-@media (max-width: 768px) {
-  .blogs-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .blogs-header h2 {
-    margin-bottom: 15px;
-  }
-
-  .blog-media img,
-  .no-image {
-    width: 120px;
-    height: 120px;
-  }
-}
-
-@media (max-width: 480px) {
-  .blog-card {
-    font-size: 0.95rem;
-  }
-
-  .blog-media img,
-  .no-image {
-    width: 100px;
-    height: 100px;
-  }
-
-  .blog-title {
-    font-size: 1.2rem;
-  }
+  background-color: #fff;
+  color: #000;
 }
