@@ -7,24 +7,24 @@ function About() {
   return (
     <div className="about-page">
       <div className="profile-section">
-        <h1>Admin-Portfolio</h1>
-        <img src="/images/profile.jpg" alt="Profile" className="profile-img" />
+        <h1>Admin Portfolio</h1>
+        <img src="/images/profile.jpg" alt="Swagath" className="profile-img" />
         <p>
-          Hi! I am a passionate web developer. Explore my projects and blogs. You can contact me anytime, even without logging in.
+          Hi, I’m Swagath. I am a passionate web developer who loves creating modern and responsive web applications. My goal is to build projects that are both functional and visually appealing, delivering smooth experiences for users.
         </p>
       </div>
 
       <div className="about-content">
         <p>
-          I specialize in building modern web applications using React and Django. My focus is on clean design, responsive layouts, and smooth user experience. 
-          I also manage my projects and blogs through a secure admin login for full CRUD functionality.
+          I specialize in full-stack development using React for frontend and Django REST Framework for backend. I focus on clean code, responsive design, and user-friendly interfaces. 
+          I also manage my projects and blogs through a secure admin dashboard, giving me hands-on experience with CRUD operations, authentication, and role-based access control.
         </p>
       </div>
 
       <footer className="about-footer">
-        <span>&copy; {new Date().getFullYear()} My Portfolio</span>
+        <span>&copy; {new Date().getFullYear()} Swagath Portfolio</span>
         <span className="admin-login-link" onClick={() => navigate("/login")} title="Admin login">
-          Admin-Login
+          Admin Login
         </span>
       </footer>
     </div>
