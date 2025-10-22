@@ -3,7 +3,7 @@ nav {
   background: linear-gradient(90deg, #1e1e1e, #121212);
   padding: 12px 20px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* allows buttons to move to next line on small screens */
   align-items: center;
   justify-content: center;
   gap: 10px;
@@ -26,7 +26,8 @@ nav {
   border: none;
   display: inline-block;
   text-align: center;
-  white-space: nowrap;
+  white-space: normal; /* allow text to wrap instead of cutting off */
+  min-width: 100px; /* optional: avoid very tiny buttons */
 }
 
 /* Hover effect */
@@ -46,6 +47,8 @@ nav button {
   cursor: pointer;
   font-weight: 500;
   transition: all 0.3s ease;
+  white-space: normal; /* wrap text if necessary */
+  min-width: 100px;    /* avoid tiny buttons */
 }
 
 nav button:hover {
@@ -59,17 +62,16 @@ nav button:hover {
 /* Medium devices (tablets) */
 @media (max-width: 992px) {
   nav {
-    flex-direction: column;
+    flex-direction: column; /* stack buttons vertically */
     gap: 10px;
-    align-items: stretch; /* make buttons full width */
+    align-items: stretch; /* buttons fill available width */
   }
   .nav-btn, nav button {
     width: 100%;
-    max-width: 400px; /* optional max width for tablets */
+    max-width: 400px; /* optional max width for larger tablets */
     padding: 10px 0;
     font-size: 0.95rem;
     text-align: center;
-    white-space: normal; /* allow text to wrap if needed */
   }
 }
 
@@ -84,6 +86,5 @@ nav button:hover {
     padding: 10px 0;
     font-size: 0.9rem;
     border-radius: 20px;
-    white-space: normal; /* wrap text instead of cutting off */
   }
 }
