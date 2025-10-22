@@ -1,3 +1,11 @@
+/* ===== Reset ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Page Container ===== */
 .add-project-page {
   background-color: #0d0d0d;
   min-height: 100vh;
@@ -7,36 +15,46 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
 }
 
+/* ===== Heading ===== */
 .add-project-page h2 {
   color: #00bfff;
   text-align: center;
   font-size: 2rem;
   margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  word-wrap: break-word;
 }
 
-/* Form container */
+/* ===== Form Container ===== */
 .add-project-page form {
   width: 100%;
   max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  background-color: #111;
+  background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
   padding: 25px 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 191, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 191, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
 }
 
-/* Labels */
+/* ===== Labels ===== */
 .add-project-page label {
   font-weight: 600;
   margin-bottom: 5px;
   font-size: 0.95rem;
+  color: #e0e0e0;
+  word-break: break-word;
 }
 
-/* Inputs & textarea */
+/* ===== Inputs & Textarea ===== */
 .add-project-page input[type="text"],
 .add-project-page input[type="url"],
 .add-project-page input[type="file"],
@@ -49,6 +67,8 @@
   font-size: 1rem;
   width: 100%;
   transition: all 0.3s ease;
+  font-family: inherit;
+  resize: vertical;
 }
 
 .add-project-page input::placeholder,
@@ -63,30 +83,66 @@
   box-shadow: 0 0 8px rgba(0, 191, 255, 0.6);
 }
 
-/* Buttons */
+/* ===== Buttons ===== */
 .add-project-page button {
   padding: 12px 0;
   border-radius: 10px;
   border: none;
-  background: linear-gradient(90deg, #00bfff, #1e90ff);
-  color: #fff;
+  background: linear-gradient(90deg, #00bfff, #00ffbf);
+  color: #000;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .add-project-page button:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 191, 255, 0.7);
+  background: linear-gradient(90deg, #ffcc00, #ffaa00);
+  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
+  color: #000;
 }
 
-/* ===== Responsive ===== */
+/* ===== Messages ===== */
+.add-project-page .message {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.add-project-page .message.success {
+  color: #00ff88;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.add-project-page .message.error {
+  color: #ff4d4d;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
 
 /* Tablets */
 @media (max-width: 992px) {
   .add-project-page {
     padding: 30px 15px;
+  }
+  .add-project-page h2 {
+    font-size: 1.8rem;
   }
   .add-project-page form {
     padding: 20px 15px;
@@ -96,24 +152,54 @@
   }
 }
 
-/* Small devices / Mobile */
-@media (max-width: 576px) {
+/* Mobile Large (like 600px) */
+@media (max-width: 600px) {
   .add-project-page {
-    padding: 20px 10px;
-  }
-  .add-project-page h2 {
-    font-size: 1.8rem;
+    padding: 25px 12px;
   }
   .add-project-page form {
-    padding: 15px 10px;
+    padding: 18px 12px;
   }
   .add-project-page input,
   .add-project-page textarea {
     padding: 10px;
     font-size: 0.95rem;
   }
+}
+
+/* Mobile Medium (480px and below) */
+@media (max-width: 480px) {
+  .add-project-page h2 {
+    font-size: 1.6rem;
+  }
+  .add-project-page form {
+    padding: 15px 10px;
+  }
   .add-project-page button {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     padding: 10px 0;
+  }
+}
+
+/* Small Phones (up to 360px) */
+@media (max-width: 360px) {
+  .add-project-page {
+    padding: 20px 8px;
+  }
+  .add-project-page h2 {
+    font-size: 1.4rem;
+  }
+  .add-project-page form {
+    padding: 12px 8px;
+    gap: 10px;
+  }
+  .add-project-page input,
+  .add-project-page textarea {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+  .add-project-page button {
+    font-size: 0.85rem;
+    padding: 8px 0;
   }
 }

@@ -61,11 +61,15 @@ nav button:hover {
   nav {
     flex-direction: column;
     gap: 10px;
+    align-items: stretch; /* make buttons full width */
   }
   .nav-btn, nav button {
-    width: 90%;
+    width: 100%;
+    max-width: 400px; /* optional max width for tablets */
     padding: 10px 0;
     font-size: 0.95rem;
+    text-align: center;
+    white-space: normal; /* allow text to wrap if needed */
   }
 }
 
@@ -73,11 +77,13 @@ nav button:hover {
 @media (max-width: 576px) {
   nav {
     padding: 10px 15px;
+    gap: 8px;
   }
   .nav-btn, nav button {
     width: 100%;
     padding: 10px 0;
     font-size: 0.9rem;
     border-radius: 20px;
+    white-space: normal; /* wrap text instead of cutting off */
   }
 }

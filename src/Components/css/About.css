@@ -1,7 +1,7 @@
 /* About Page Base */
 .about-page {
   min-height: 100vh;
-  background-color: #000; /* full black background */
+  background-color: #000;
   color: #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
@@ -9,6 +9,7 @@
   justify-content: space-between;
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* Prevent sideways scrolling */
 }
 
 /* Profile Section */
@@ -18,10 +19,10 @@
 }
 
 .profile-img {
-  width: 200px;        /* image size */
-  height: 200px;       /* square */
-  border-radius: 50%;  /* circular */
-  object-fit: cover;   /* keep image centered and cropped */
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
   border: 3px solid #00aaff;
   margin-bottom: 20px;
 }
@@ -29,18 +30,19 @@
 .profile-section h1 {
   font-size: 2.5rem;
   margin-bottom: 15px;
+  word-wrap: break-word;
 }
 
 .profile-section p {
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* About Content */
 .about-content {
-  padding: 0 20px 40px 20px;
+  padding: 0 20px 60px 20px;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
@@ -57,6 +59,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* Prevent overlap on small screens */
   padding: 15px 20px;
   background-color: #111;
   font-size: 0.9rem;
@@ -65,12 +68,14 @@
 
 .about-footer span {
   color: #fff;
+  margin: 5px 0;
 }
 
 .admin-login-link {
   cursor: pointer;
   text-decoration: underline;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .admin-login-link:hover {
@@ -80,7 +85,7 @@
 /* Responsive for Tablets */
 @media (max-width: 768px) {
   .profile-section {
-    padding: 50px 20px 20px 20px;
+    padding: 60px 15px 25px 15px;
   }
 
   .profile-img {
@@ -92,28 +97,31 @@
     font-size: 2rem;
   }
 
-  .profile-section p {
+  .profile-section p,
+  .about-content p {
     font-size: 1rem;
   }
 
   .about-content {
-    padding: 0 15px 30px 15px;
+    padding-bottom: 50px;
   }
 
-  .about-content p {
-    font-size: 1rem;
+  .about-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
   }
 }
 
-/* Responsive for Mobile */
+/* Responsive for Mobiles */
 @media (max-width: 480px) {
   .profile-section {
     padding: 40px 10px 15px 10px;
   }
 
   .profile-img {
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
   }
 
   .profile-section h1 {
@@ -122,9 +130,39 @@
 
   .profile-section p {
     font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 0 5px;
+  }
+
+  .about-content {
+    padding: 0 10px 40px 10px;
   }
 
   .about-content p {
     font-size: 0.95rem;
+  }
+
+  .about-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
+    padding: 10px;
+  }
+}
+
+/* Extra Small Devices (under 360px like small Androids) */
+@media (max-width: 360px) {
+  .profile-img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .profile-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .profile-section p,
+  .about-content p {
+    font-size: 0.9rem;
   }
 }

@@ -1,3 +1,4 @@
+/* ===== Base Layout ===== */
 .add-blog-page {
   background-color: #0d0d0d;
   min-height: 100vh;
@@ -7,16 +8,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  overflow-x: hidden; /* prevent side scroll */
 }
 
+/* ===== Heading ===== */
 .add-blog-page h2 {
   color: #00bfff;
   text-align: center;
   font-size: 2rem;
   margin-bottom: 25px;
+  word-wrap: break-word;
 }
 
-/* Form container */
+/* ===== Form Container ===== */
 .add-blog-page form {
   width: 100%;
   max-width: 600px;
@@ -29,14 +34,14 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
 
-/* Labels */
+/* ===== Labels ===== */
 .add-blog-page label {
   font-weight: 600;
   font-size: 0.95rem;
   margin-bottom: 5px;
 }
 
-/* Inputs & textarea */
+/* ===== Inputs & Textareas ===== */
 .add-blog-page input[type="text"],
 .add-blog-page textarea,
 .add-blog-page input[type="file"] {
@@ -62,7 +67,7 @@
   box-shadow: 0 0 8px rgba(0, 191, 255, 0.6);
 }
 
-/* Buttons */
+/* ===== Button ===== */
 .add-blog-page button {
   padding: 12px 0;
   border-radius: 10px;
@@ -80,39 +85,72 @@
   box-shadow: 0 6px 20px rgba(0, 191, 255, 0.7);
 }
 
-/* ===== Responsive ===== */
+/* ===== Responsive Design ===== */
 
-/* Tablets */
+/* Tablets (landscape & portrait) */
 @media (max-width: 992px) {
   .add-blog-page {
     padding: 30px 15px;
   }
+
   .add-blog-page form {
     padding: 20px 15px;
   }
+
   .add-blog-page button {
     font-size: 0.95rem;
   }
 }
 
-/* Small devices / Mobile */
+/* Mobiles (below 576px) */
 @media (max-width: 576px) {
   .add-blog-page {
-    padding: 20px 10px;
+    padding: 20px 10px 40px 10px;
   }
+
   .add-blog-page h2 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
+
   .add-blog-page form {
     padding: 15px 10px;
+    gap: 12px;
   }
+
   .add-blog-page input,
   .add-blog-page textarea {
     padding: 10px;
     font-size: 0.95rem;
   }
+
+  .add-blog-page textarea {
+    min-height: 120px; /* more space for typing */
+  }
+
   .add-blog-page button {
     font-size: 0.95rem;
     padding: 10px 0;
+    margin-top: 10px;
+  }
+}
+
+/* Extra Small Devices (below 360px) */
+@media (max-width: 360px) {
+  .add-blog-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .add-blog-page form {
+    padding: 12px 8px;
+  }
+
+  .add-blog-page input,
+  .add-blog-page textarea {
+    font-size: 0.9rem;
+  }
+
+  .add-blog-page button {
+    font-size: 0.9rem;
+    padding: 9px 0;
   }
 }
