@@ -1,4 +1,4 @@
-/* About Page Base */
+/* ===== About Page Base ===== */
 .about-page {
   min-height: 100vh;
   background-color: #000;
@@ -6,16 +6,16 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Prevent sideways scrolling */
+  align-items: center;   /* center content horizontally */
+  padding-top: 100px;    /* space for sticky navbar */
+  overflow-x: hidden;
 }
 
 /* Profile Section */
 .profile-section {
   text-align: center;
-  padding: 80px 20px 30px 20px;
+  padding: 20px;
+  margin-bottom: 30px;
 }
 
 .profile-img {
@@ -59,7 +59,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Prevent overlap on small screens */
+  flex-wrap: wrap;
   padding: 15px 20px;
   background-color: #111;
   font-size: 0.9rem;
@@ -82,10 +82,10 @@
   color: #00aaff;
 }
 
-/* Responsive for Tablets */
+/* ===== Responsive for Tablets ===== */
 @media (max-width: 768px) {
-  .profile-section {
-    padding: 60px 15px 25px 15px;
+  .about-page {
+    padding-top: 120px; /* more space for navbar */
   }
 
   .profile-img {
@@ -102,10 +102,6 @@
     font-size: 1rem;
   }
 
-  .about-content {
-    padding-bottom: 50px;
-  }
-
   .about-footer {
     flex-direction: column;
     text-align: center;
@@ -113,10 +109,10 @@
   }
 }
 
-/* Responsive for Mobiles */
+/* ===== Responsive for Mobiles ===== */
 @media (max-width: 480px) {
-  .profile-section {
-    padding: 40px 10px 15px 10px;
+  .about-page {
+    padding-top: 140px; /* enough space so heading and image are visible */
   }
 
   .profile-img {
@@ -128,7 +124,8 @@
     font-size: 1.7rem;
   }
 
-  .profile-section p {
+  .profile-section p,
+  .about-content p {
     font-size: 0.95rem;
     line-height: 1.5;
     padding: 0 5px;
@@ -136,10 +133,6 @@
 
   .about-content {
     padding: 0 10px 40px 10px;
-  }
-
-  .about-content p {
-    font-size: 0.95rem;
   }
 
   .about-footer {
@@ -150,7 +143,7 @@
   }
 }
 
-/* Extra Small Devices (under 360px like small Androids) */
+/* Extra Small Devices (<360px) */
 @media (max-width: 360px) {
   .profile-img {
     width: 110px;

@@ -13,6 +13,7 @@ body, html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #000;
   color: #fff;
+  overflow-x: hidden;
 }
 
 /* ===== Navbar ===== */
@@ -22,7 +23,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start; /* left-aligned on mobile */
+  justify-content: flex-start;
   gap: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
   position: sticky;
@@ -50,7 +51,6 @@ nav {
   box-shadow: 0 0 12px rgba(101,155,255,0.7);
 }
 
-/* Logout button */
 nav button {
   background: #e63946;
 }
@@ -63,7 +63,7 @@ nav button:hover {
 .content-wrapper {
   width: 100%;
   max-width: 1200px;
-  margin: 20px auto 40px auto; /* space from navbar */
+  margin: 20px auto 40px auto;
   padding: 0 15px;
   display: flex;
   flex-direction: column;
@@ -195,93 +195,56 @@ button {
 }
 
 /* Mobiles */
-@media (max-width: 576px) {
-  nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 6px;
-  }
-  .nav-btn, nav button {
-    padding: 5px 10px;
-    font-size: 0.9rem;
-    white-space: normal;
-  }
-  .content-wrapper {
-    margin-top: 70px; /* extra space for sticky navbar */
-    padding: 0 10px;
-  }
-  .project-card img, .blog-card img, .about-photo {
-    width: 100%;
-    height: auto;
-  }
-}
-
-/* Extra small devices */
-@media (max-width: 400px) {
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.3rem; }
-  p { font-size: 0.95rem; }
-}
-/* ===== Universal adjustments for mobile ===== */
 @media (max-width: 768px) {
-  /* Navbar buttons */
   nav {
     flex-direction: column;
-    align-items: flex-start; /* buttons move left */
+    align-items: flex-start;
     gap: 8px;
     padding: 10px 15px;
   }
-
-  .nav-btn,
-  nav button {
-    width: auto; /* not full width, adjust if needed */
-    font-size: 0.9rem;
+  .nav-btn, nav button {
     padding: 6px 12px;
-    white-space: normal; /* wrap text */
+    font-size: 0.9rem;
+    white-space: normal;
   }
 
-  /* Make sure content starts below navbar */
-  body, html {
-    overflow-x: hidden;
-  }
-
-  /* Pages container */
+  /* Content spacing below sticky navbar */
+  .content-wrapper,
+  .home-page,
   .projects-page,
   .blogs-page,
   .about-page,
-  .home-page,
   .contact-page,
   .view-messages-page {
-    padding-top: 80px; /* give space for sticky navbar */
+    padding-top: 100px;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
-  /* Project / Blog cards */
+  /* Cards full width */
   .project-card,
   .blog-card {
-    width: 95%; /* ensure no overflow */
-    margin: 10px 0;
+    width: 95%;
+    margin: 10px auto;
   }
 
   .project-card img,
   .blog-card img,
-  .about-page img {
-    width: 100%; /* full width of container */
-    height: auto; /* keep aspect ratio */
+  .about-photo {
+    width: 100%;
+    height: auto;
     object-fit: cover;
-    display: block;
   }
 
-  /* Headings */
+  /* Headings responsive */
   h1, h2, h3 {
-    font-size: clamp(1.2rem, 4vw, 2rem); /* responsive sizing */
+    font-size: clamp(1.2rem, 4vw, 2rem);
     text-align: center;
   }
 
-  /* Buttons inside cards or actions */
+  /* Buttons inside cards */
   .project-actions button,
   .blog-actions button,
   .view-messages-page button {
@@ -289,7 +252,7 @@ button {
     font-size: 0.9rem;
   }
 
-  /* Forms (contact, add project/blog) */
+  /* Forms */
   form {
     width: 95%;
     padding: 15px 10px;
@@ -303,22 +266,23 @@ button {
 
 /* Very small mobiles */
 @media (max-width: 480px) {
+  .content-wrapper,
+  .home-page,
   .projects-page,
   .blogs-page,
   .about-page,
-  .home-page,
   .contact-page,
   .view-messages-page {
-    padding-top: 100px;
+    padding-top: 120px;
   }
 
-  h1, h2, h3 {
-    font-size: clamp(1rem, 5vw, 1.5rem);
-  }
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.3rem; }
 
   .project-card img,
   .blog-card img,
-  .about-page img {
+  .about-photo {
     width: 100%;
     height: auto;
   }
@@ -328,8 +292,7 @@ button {
     gap: 6px;
   }
 
-  .nav-btn,
-  nav button {
+  .nav-btn, nav button {
     font-size: 0.85rem;
     padding: 5px 10px;
   }

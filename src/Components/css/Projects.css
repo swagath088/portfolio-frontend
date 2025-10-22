@@ -17,7 +17,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 20px;
+  padding: 120px 20px 40px 20px; /* increased top padding for navbar */
 }
 
 /* ===== Header Section ===== */
@@ -71,6 +71,7 @@ html, body {
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
+  width: 100%;
 }
 
 .project-card:hover {
@@ -81,9 +82,8 @@ html, body {
 /* ===== Project Image ===== */
 .project-card img {
   width: 100%;
-  max-width: 260px;
-  height: auto;
-  aspect-ratio: 1 / 1;
+  max-width: 100%;
+  height: auto; /* auto height to prevent cutting off */
   object-fit: cover;
   border-radius: 10px;
   display: block;
@@ -146,6 +146,11 @@ html, body {
 
 /* ===== Mobile Devices ===== */
 @media (max-width: 768px) {
+  .projects-page {
+    padding: 140px 15px 40px 15px; /* extra top padding for navbar */
+    align-items: center;
+  }
+
   .projects-header {
     flex-direction: column;
     gap: 10px;
@@ -162,6 +167,7 @@ html, body {
 
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .project-card img {
@@ -180,7 +186,7 @@ html, body {
 /* ===== Small Phones ===== */
 @media (max-width: 480px) {
   .projects-page {
-    padding: 20px 10px;
+    padding: 160px 10px 30px 10px; /* ensure first card is fully visible */
   }
 
   .projects-header h2 {
@@ -207,5 +213,24 @@ html, body {
   .project-actions button {
     font-size: 0.9rem;
     padding: 6px 10px;
+  }
+}
+
+/* ===== Extra Small Phones ===== */
+@media (max-width: 360px) {
+  .projects-page {
+    padding: 180px 8px 20px 8px; /* fully visible first project */
+  }
+
+  .projects-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .project-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .project-card p {
+    font-size: 0.85rem;
   }
 }
