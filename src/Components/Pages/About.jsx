@@ -24,7 +24,7 @@ function About() {
       <footer className="about-footer">
         <span>&copy; {new Date().getFullYear()} Swagath Portfolio</span>
         <span className="admin-login-link" onClick={() => navigate("/login")} title="Admin login">
-          Admin Login
+          &nbsp; Admin Login
         </span>
       </footer>
     </div>
