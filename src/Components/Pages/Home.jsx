@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/Home.css';
 
-export default function Home() {
+function Home() {
   return (
     <div style={{ padding: 20 }}>
       <h1>Welcome to My Portfolio</h1>
@@ -9,3 +9,4 @@ export default function Home() {
     </div>
   );
 }
+export default Home;
